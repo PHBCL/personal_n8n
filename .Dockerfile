@@ -1,0 +1,11 @@
+FROM docker.n8n.io/n8nio/n8n:2.11
+
+USER root
+
+RUN apk add --no-cache \
+    python3 \
+    py3-pip \
+    ffmpeg \
+ && pip3 install --no-cache-dir yt-dlp
+
+USER node
